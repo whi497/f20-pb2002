@@ -16,6 +16,6 @@ Simulates a bowling ball hitting a rack of pins, using negative
 mass for the bowling ball to make the pins fly away.
 
 Suggested use:
-java-introcs NBody 1e7 1e3 < bowling.txt
+java-introcs Body 1e7 1e3 < bowling.txt
 
 By: Henry Lu '16 (Spring 2013)

@@ -18,7 +18,7 @@ public class TestReadBodies {
         String planetsTxtPath = "./data/planets.txt";
         /* If the following line fails to compile, you probably need to make
          * a certain method static! */
-        Body[] actualOutput = NBody.readBodies(planetsTxtPath);
+        Body[] actualOutput = Body.readBodies(planetsTxtPath);
 
         /* Check the simple things: */
         if (actualOutput == null) {
