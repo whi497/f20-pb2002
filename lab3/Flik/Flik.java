@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /** An Integer tester created by Flik Enterprises.
  * @author Josh Hug
  * */
