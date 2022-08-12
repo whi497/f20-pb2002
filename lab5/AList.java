@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 /** Array based list.
  *  @author Josh Hug
  */
@@ -12,7 +14,7 @@
  size: The number of items in the list should be size.
 */
 
-public class AList<Item> {
+public class AList<Item> implements Iterable<Item> {
     private Item[] items;
     private int size;
 
@@ -32,7 +34,7 @@ public class AList<Item> {
     /** Inserts X into the back of the list. */
     public void addLast(Item x) {
         if (size == items.length) {
-            resize((int) (size + 1));
+            resize((int) (1.01*size));
         }
 
         items[size] = x;
@@ -60,5 +62,21 @@ public class AList<Item> {
         items[size - 1] = null;
         size = size - 1;
         return x;
+    }
+
+    private class myIterator implements Iterator<Item> {
+        private int index = 0;
+        @Override
+        public boolean hasNext() {
+            return index < size;
+        }
+        @Override
+        public Item next() {
+            return items[index++];
+        }
+    }
+    @Override
+    public Iterator<Item> iterator() {
+        return new myIterator();
     }
 }

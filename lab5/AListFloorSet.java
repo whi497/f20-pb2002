@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * TODO: Fill in the add and floor methods.
  */
@@ -8,11 +10,26 @@ public class AListFloorSet implements Lab5FloorSet {
         items = new AList<>();
     }
 
+     public boolean contains(double elem) {
+        for (double item : items) {
+            if (item == elem) return true;
+        }
+        return false;
+    }
+
     public void add(double x) {
-        return;
+        if (!contains(x)) {
+            items.addLast(x);
+        }
+
     }
 
     public double floor(double x) {
-        return 0;
+        if (contains(x)) return x;
+        double result = Double.NEGATIVE_INFINITY;
+        for (double item : items) {
+            if (item < x && item > result) {result = item;}
+        }
+        return result;
     }
 }

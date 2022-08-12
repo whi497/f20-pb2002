@@ -12,7 +12,7 @@ public class SLList<Item> {
 	}
 
 	/* The first item (if it exists) is at sentinel.next. */
-	private IntNode sentinel;
+	private final IntNode sentinel;
 	private int size;
 
 	/** Creates an empty SLList. */
@@ -71,10 +71,9 @@ public class SLList<Item> {
 	public int size() {
 		return size;
 	}
-
 	public static void main(String[] args) {
 		/* Creates a list of one integer, namely 10 */
-		SLList L = new SLList();
+		SLList<Integer> L = new SLList<>();
 		L.addLast(20);
 		System.out.println(L.size());
 	}
